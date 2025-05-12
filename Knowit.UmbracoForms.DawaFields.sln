@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Umbraco13", "Umbraco13\Umbraco13.csproj", "{C37484B4-0081-4A75-B75C-1D24D315B294}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Knowit.UmbracoForms.DawaFields", "Knowit.UmbracoForms.DawaFields\Knowit.UmbracoForms.DawaFields.csproj", "{2A30651A-2021-4BA2-B991-514989F450B6}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C37484B4-0081-4A75-B75C-1D24D315B294}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C37484B4-0081-4A75-B75C-1D24D315B294}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C37484B4-0081-4A75-B75C-1D24D315B294}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C37484B4-0081-4A75-B75C-1D24D315B294}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2A30651A-2021-4BA2-B991-514989F450B6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2A30651A-2021-4BA2-B991-514989F450B6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2A30651A-2021-4BA2-B991-514989F450B6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2A30651A-2021-4BA2-B991-514989F450B6}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

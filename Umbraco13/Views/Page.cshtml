@@ -1,0 +1,6 @@
+﻿@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<Umbraco.Cms.Web.Common.PublishedModels.Page>
+@{
+	Layout = null;
+}
+
+@await Component.InvokeAsync("RenderForm", new { formId = Model.Formular })

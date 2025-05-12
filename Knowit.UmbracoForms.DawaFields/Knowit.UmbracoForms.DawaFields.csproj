@@ -1,0 +1,42 @@
+<Project Sdk="Microsoft.NET.Sdk">
+    <PropertyGroup>
+        <TargetFramework>net8.0</TargetFramework>
+        <Nullable>enable</Nullable>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <ContentTargetFolders>.</ContentTargetFolders>
+    </PropertyGroup>
+
+    <PropertyGroup>
+        <PackageId>Knowit.UmbracoForms.DawaFields</PackageId>
+        <Product>Knowit.UmbracoForms.DawaFields</Product>
+        <Title>Umbraco Forms Dawa Autocomplete Fields</Title>
+        <Description>Adds autocomplete fields for danish addresses</Description>
+        <PackageTags>umbraco plugin package</PackageTags>
+        <Authors>Mustap</Authors>
+        <PackageLicenseExpression>MIT</PackageLicenseExpression>
+        <PackageProjectUrl>https://github.com/mustap/Knowit.UmbracoForms.DawaFields</PackageProjectUrl>
+        <RepositoryUrl>https://github.com/mustap/Knowit.UmbracoForms.DawaFields</RepositoryUrl>
+        <PackageTags>Umbraco Forms Danish Addresses Autocomplete Fields</PackageTags>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Umbraco.Cms.Web.Website" Version="13.8"/>
+        <PackageReference Include="Umbraco.Cms.Web.BackOffice" Version="13.8"/>
+        <PackageReference Include="Umbraco.Forms" Version="13.4.1" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <Content Include="App_Plugins\Knowit.UmbracoForms.DawaFields\**\*.*" ExcludeFromSingleFile="true" CopyToPublishDirectory="Always"/>
+        <Content Include="Views\Partials\Forms\Themes\default\Fieldtypes\DawaAddrOne.cshtml" />
+        <Content Include="Views\Partials\Forms\Themes\default\Fieldtypes\DawaAddrMulti.cshtml" />
+        <None Include="buildTransitive\**" Pack="true" PackagePath="buildTransitive"/>
+    </ItemGroup>
+    <PropertyGroup>
+        <IncludeContentInPack>true</IncludeContentInPack>
+        <PackageReadmeFile>README.md</PackageReadmeFile>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <None Include="README.md" Pack="true" PackagePath="" />
+    </ItemGroup>
+</Project>

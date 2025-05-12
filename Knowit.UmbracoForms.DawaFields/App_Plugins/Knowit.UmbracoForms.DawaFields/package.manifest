@@ -1,0 +1,9 @@
+{
+    "id": "Knowit.UmbracoForms.DawaFields",
+    "name": "Knowit.UmbracoForms.DawaFields",
+    "allowPackageTelemetry": true,
+
+   "javascript": [
+        "~/App_Plugins/Knowit.UmbracoForms.DawaFields/controller.js"
+    ]
+}

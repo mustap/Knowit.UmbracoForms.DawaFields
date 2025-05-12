@@ -1,0 +1,27 @@
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <KnowitUmbracoFormsDawaFieldsContentFilesPath>$(MSBuildThisFileDirectory)..\App_Plugins\Knowit.UmbracoForms.DawaFields\**\*.*</KnowitUmbracoFormsDawaFieldsContentFilesPath>
+    <KnowitUmbracoFormsDawaFieldsContentRazorFilesPath>$(MSBuildThisFileDirectory)..\Views\Partials\Forms\Themes\default\Fieldtypes\**\*.*</KnowitUmbracoFormsDawaFieldsContentRazorFilesPath>
+
+  </PropertyGroup>
+
+  <Target Name="CopyKnowitUmbracoFormsDawaFieldsAssets" BeforeTargets="BeforeBuild">
+    <ItemGroup>
+      <KnowitUmbracoFormsDawaFieldsContentFiles Include="$(KnowitUmbracoFormsDawaFieldsContentFilesPath)" />
+      <KnowitUmbracoFormsDawaFieldsContentRazorFiles Include="$(KnowitUmbracoFormsDawaFieldsContentRazorFilesPath)" />
+    </ItemGroup>
+    <Message Text="Copying Knowit.UmbracoForms.DawaFields files: $(KnowitUmbracoFormsDawaFieldsContentFilesPath) - #@(KnowitUmbracoFormsDawaFieldsContentFiles->Count()) files" Importance="high" />
+    <Copy SourceFiles="@(KnowitUmbracoFormsDawaFieldsContentFiles)" DestinationFiles="@(KnowitUmbracoFormsDawaFieldsContentFiles->'$(MSBuildProjectDirectory)\App_Plugins\Knowit.UmbracoForms.DawaFields\%(RecursiveDir)%(Filename)%(Extension)')" SkipUnchangedFiles="true" />
+
+    <Message Text="Copying Knowit.UmbracoForms.DawaFields Razor files: $(KnowitUmbracoFormsDawaFieldsContentRazorFilesPath) - #@(KnowitUmbracoFormsDawaFieldsContentRazorFiles->Count()) files" Importance="high" />
+    <Copy SourceFiles="@(KnowitUmbracoFormsDawaFieldsContentRazorFiles)" DestinationFiles="@(KnowitUmbracoFormsDawaFieldsContentRazorFiles->'$(MSBuildProjectDirectory)\Views\Partials\Forms\Themes\default\FieldTypes\%(RecursiveDir)%(Filename)%(Extension)')" SkipUnchangedFiles="false" />
+  </Target>
+
+  <Target Name="ClearKnowitUmbracoFormsDawaFieldsAssets" BeforeTargets="Clean">
+    <ItemGroup>
+      <KnowitUmbracoFormsDawaFieldsDir Include="$(MSBuildProjectDirectory)\App_Plugins\Knowit.UmbracoForms.DawaFields\" />
+    </ItemGroup>
+    <Message Text="Clear old Knowit.UmbracoForms.DawaFields data" Importance="high" />
+    <RemoveDir Directories="@(KnowitUmbracoFormsDawaFieldsDir)" />
+  </Target>
+</Project>

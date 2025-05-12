@@ -1,0 +1,17 @@
+<div>
+    <div>
+        <table ng-controller="DawaRenderController" ng-init="myInitialize(field)" class="table table-striped table-bordered" style="width: unset">
+            <thead style="background-color: #fcfcfc;">
+                <tr><th>Address Text</th><th>Address Id</th></tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="item in jsonField">
+                    <td>{{item.text}}</td>
+                    <td>{{item.id}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
