@@ -16,12 +16,33 @@ public static class FormFieldExtensions
         var addresses = Newtonsoft.Json.JsonConvert.DeserializeObject<List<AddressModel>>(fieldText);
         if (addresses != null && addresses.Count > 0)
         {
-            html += $"""<div class="dawa-addrs"><a class="download-json" download="{field!.Name.Replace(" ", "_")}.json" href="data:application/json;base64,{json}">Download Json</a><table class="table table-striped table-bordered"><thead><tr><th>Address Text</th><th>Address Id</th></tr></thead><tbody>""";
+            html += $"""
+                     <div class="dawa-addrs">
+                        <div class="dawa-adr" data-filename="{field!.Name}" data-json="{fieldText}"></div>
+                        <table class="table table-striped table-bordered">
+                            <thead>
+                                <tr>
+                                    <th>Address Text</th>
+                                    <th>Address Id</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                     """;
             foreach (var addr in addresses)
             {
-                html += $"""<tr><td>{addr.Text}</td><td>{addr.Id}</td></tr>""";
+                html += $"""
+                                <tr>
+                                    <td>{addr.Text}</td>
+                                    <td>{addr.Id}</td>
+                                </tr>
+                         """;
             }
-            html += "</div></tbody></table>";
+
+            html += """
+                            </tbody>
+                        </table>
+                    </div>
+                    """;
         }
         return html;
     }
