@@ -1,9 +1,9 @@
+using Knowit.UmbracoForms.DawaFields.DataViews;
 using Knowit.UmbracoForms.DawaFields.Fields;
 using Knowit.UmbracoForms.DawaFields.Services;
 using Microsoft.Extensions.DependencyInjection;
 using Umbraco.Cms.Core.Composing;
 using Umbraco.Cms.Core.DependencyInjection;
-using Umbraco.Extensions;
 using Umbraco.Forms.Core.Providers;
 using Umbraco.Forms.Core.Services;
 
@@ -16,6 +16,7 @@ public class DawaFieldsComposer: IComposer
         // Register custom field types
         builder.Services.AddSingleton<DawaAddrOne>();
         builder.Services.AddSingleton<DawaAddrMulti>();
+        builder.Services.AddSingleton<IDawaFieldView, DawaFieldDefaultView>();
 
         // Add to field collection
         builder.WithCollectionBuilder<FieldCollectionBuilder>()
@@ -38,7 +39,8 @@ public class DawaFieldsComposer: IComposer
             builder.Services.Add(ServiceDescriptor.Describe(
                 typeof(IWorkflowEmailService),           // Original interface
                 sp => new DawaWorkflowEmailService(
-                    (WorkflowEmailService)sp.GetRequiredService(originalType)
+                    (WorkflowEmailService)sp.GetRequiredService(originalType),
+                    sp.GetRequiredService<IDawaFieldView>()
                 ),
                 lifetime));
         }
