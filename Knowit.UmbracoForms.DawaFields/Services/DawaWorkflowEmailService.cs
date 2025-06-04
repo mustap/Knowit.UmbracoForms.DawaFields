@@ -17,7 +17,7 @@ public class DawaWorkflowEmailService: IWorkflowEmailService
     public async Task SendEmailAsync(SendEmailArgs args)
     {
         var dawaAttachments = _dataFieldView.GetDawaAttachments(args.Body);
-        args.Body = _dataFieldView.GetDawaDataVieIfNoTemplate(args.Body);
+        args.Body = _dataFieldView.GetDawaDataViewIfNoTemplate(args.Body);
         args.Attachments = args.Attachments.Concat(dawaAttachments);
         await _inner.SendEmailAsync(args);
     }

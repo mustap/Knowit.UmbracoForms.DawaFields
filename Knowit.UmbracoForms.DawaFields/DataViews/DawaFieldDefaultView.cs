@@ -28,7 +28,7 @@ public class DawaFieldDefaultView: IDawaFieldView
         return html;
     }
 
-    public string GetDawaDataVieIfNoTemplate(string textBody)
+    public string GetDawaDataViewIfNoTemplate(string textBody)
     {
         return textBody;
     }

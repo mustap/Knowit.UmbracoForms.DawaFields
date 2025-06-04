@@ -6,6 +6,6 @@ namespace Knowit.UmbracoForms.DawaFields.DataViews;
 public interface IDawaFieldView
 {
     public string GetDawaDataView(string fieldName, string fieldValue, List<AddressModel>? addresses);
-    public string GetDawaDataVieIfNoTemplate(string textBody);
+    public string GetDawaDataViewIfNoTemplate(string textBody);
     public List<EmailMessageAttachment> GetDawaAttachments(string text);
 }
